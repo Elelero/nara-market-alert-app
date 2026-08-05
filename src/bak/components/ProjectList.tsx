@@ -1,5 +1,5 @@
 import { ChevronRight } from 'lucide-react'
-import type { ProjectItem } from '../types'
+import type { ProjectItem } from '../../types'
 
 interface ProjectListProps {
   title: string

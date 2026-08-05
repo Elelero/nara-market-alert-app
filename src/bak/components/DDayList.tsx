@@ -1,4 +1,4 @@
-import type { DDayItem } from '../types'
+import type { DDayItem } from '../../types'
 
 interface DDayListProps {
   items: DDayItem[]
