@@ -10,6 +10,7 @@ import {
   LucideIcon,
   Star,
 } from "lucide-react";
+import logo from "@images/logo.png";
 import { useState } from "react";
 
 // 사이드바 메인 메뉴
@@ -89,28 +90,51 @@ const Sidebar = () => {
   const [activeLabel, setActiveLabel] = useState("대시보드");
 
   return (
-    <aside className="w-48 shrink-0 bg-slate-900 h-screen flex flex-col justify-between rounded-tr-[25px]">
-      <div>
-        {/* Menu */}
-        <SidebarSection
-          items={mainMenu}
-          activeLabel={activeLabel}
-          onSelect={setActiveLabel}
-        />
-        <div className="mx-4 mt-6 border-t border-slate-700" />
-        <SidebarSection
-          title="MY 메뉴"
-          items={myMenu}
-          activeLabel={activeLabel}
-          onSelect={setActiveLabel}
-        />
-        <div className="mx-4 mt-6 border-t border-slate-700" />
-        <SidebarSection
-          title="QUICK 메뉴"
-          items={quickMenu}
-          activeLabel={activeLabel}
-          onSelect={setActiveLabel}
-        />
+    <aside className="w-48 shrink-0 h-screen flex flex-col">
+      {/* 로고 */}
+      <div className="flex items-center">
+        <img src={logo} width={70} />
+        <span className="text-lg">ㅇㅇㅇㅇㅇㅇㅇ</span>
+      </div>
+
+      {/* 메뉴바 */}
+      <div className="bg-slate-900 rounded-tr-[25px] flex flex-col justify-between flex-1">
+        <div>
+          {/* Menu */}
+          <SidebarSection
+            items={mainMenu}
+            activeLabel={activeLabel}
+            onSelect={setActiveLabel}
+          />
+          <div className="mx-4 mt-6 border-t border-slate-700" />
+          <SidebarSection
+            title="MY 메뉴"
+            items={myMenu}
+            activeLabel={activeLabel}
+            onSelect={setActiveLabel}
+          />
+          <div className="mx-4 mt-6 border-t border-slate-700" />
+          <SidebarSection
+            title="QUICK 메뉴"
+            items={quickMenu}
+            activeLabel={activeLabel}
+            onSelect={setActiveLabel}
+          />
+        </div>
+
+        {/* 하단 프로모션 박스 */}
+        <div className="p-4">
+          <div className="bg-blue-500/15 rounded-xl p-4 text-center">
+            <p className="text-white text-xs font-medium leading-relaxed mb-3">
+              입찰 놓치지 말고
+              <br />
+              알림 받아보세요
+            </p>
+            <button className="w-full bg-blue-500 hover:bg-blue-700 transition-colors text-white text-xs font-semibold py-2 rounded-lg">
+              알림받기
+            </button>
+          </div>
+        </div>
       </div>
     </aside>
   );
