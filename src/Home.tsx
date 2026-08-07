@@ -1,20 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   return (
     <div>
-      {/* 원래 페이지 */}
-      {/* <button onClick={() => navigate("/origin")}>원래페이지</button> */}
-
-      <div>
+      <div className="flex">
         {/* Sidebar */}
         <Sidebar />
 
-        <div>
+        <div className="flex flex-1 flex-col overflow-hidden">
           {/* Header */}
+          <Header />
 
           {/* Main Content */}
           <main></main>

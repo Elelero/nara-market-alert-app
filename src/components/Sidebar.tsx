@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import logo from "@images/logo.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // 사이드바 메인 메뉴
 const mainMenu = [
@@ -88,17 +89,20 @@ const SidebarSection = ({
 // 사이드바 Component
 const Sidebar = () => {
   const [activeLabel, setActiveLabel] = useState("대시보드");
+  const navigate = useNavigate();
 
   return (
-    <aside className="w-48 shrink-0 h-screen flex flex-col">
+    <aside className="w-48 shrink-0 h-screen flex flex-col border-b border-slate-200 bg-white">
       {/* 로고 */}
       <div className="flex items-center">
         <img src={logo} width={70} />
-        <span className="text-lg">ㅇㅇㅇㅇㅇㅇㅇ</span>
+        <span className="text-lg">
+          <button onClick={() => navigate("/origin")}>ㅇㅇㅇㅇㅇ</button>
+        </span>
       </div>
 
       {/* 메뉴바 */}
-      <div className="bg-slate-900 rounded-tr-[25px] flex flex-col justify-between flex-1">
+      <div className="bg-slate-900 z-40 shadow-[8px_0_6px_-1px_rgba(0,0,0,0.15)] rounded-tr-[25px] flex flex-col justify-between flex-1">
         <div>
           {/* Menu */}
           <SidebarSection
