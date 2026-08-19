@@ -1,4 +1,4 @@
-import type { PipelineStage } from '../types'
+import type { PipelineStage } from '../../types/types'
 
 interface PipelineFlowProps {
   stages: PipelineStage[]

@@ -6,7 +6,7 @@ import RecentAlerts from './components/RecentAlerts'
 import ProjectList from './components/ProjectList'
 import DDayList from './components/DDayList'
 import InterestDonutChart from './components/InterestDonutChart'
-import { statCards, pipelineStages, recentAlerts, hotProjects, recentViewed, ddayList, donutSlices } from '../mockData'
+import { statCards, pipelineStages, recentAlerts, hotProjects, recentViewed, ddayList, donutSlices } from '../data/homeData'
 
 export default function App() {
   return (

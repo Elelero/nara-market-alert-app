@@ -1,16 +1,20 @@
-export type BadgeType = '임찰공고' | '사전규격' | '발주계획' | '개찰결과'
+/********************************************
+ * @description: TypeScript 타입 일괄 정리
+ ********************************************/
 
-export interface StatCardData {
-  id: string
-  label: string
-  value: string
-  total?: string
-}
+export type BadgeType = '입찰공고' | '사전규격' | '발주계획' | '개찰결과'
 
 export interface PipelineStage {
   id: string
   label: string
-  active: boolean
+  active?: boolean
+}
+
+export interface StatCardData {
+  id: string
+  label: string
+  value: number
+  total: number
 }
 
 export interface AlertItem {

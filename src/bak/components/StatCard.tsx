@@ -1,4 +1,4 @@
-import type { StatCardData } from '../../types'
+import type { StatCardData } from '../../types/types'
 
 export default function StatCard({ label, value, total }: StatCardData) {
   return (

@@ -97,7 +97,7 @@ const Sidebar = () => {
       <div className="flex items-center">
         <img src={logo} width={70} />
         <span className="text-lg">
-          <button onClick={() => navigate("/origin")}>ㅇㅇㅇㅇㅇ</button>
+          <button onClick={() => navigate("/origin")}>클로드(원본)</button>
         </span>
       </div>
 

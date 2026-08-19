@@ -1,11 +1,9 @@
-import type { AlertItem, DDayItem, DonutSlice, PipelineStage, ProjectItem, StatCardData } from './types'
+/**********************************************
+ * @description: Home 디렉터리에서 사용하는 Data
+ * <cf. 수치(Number) 데이터는 제거할 예정>
+ **********************************************/
 
-export const statCards: StatCardData[] = [
-  { id: 'interest', label: '관심 사업', value: '12', total: '20' },
-  { id: 'unread', label: '읽지 않은 알림', value: '12', total: '20' },
-  { id: 'deadline', label: '마감 임박', value: '3', },
-  { id: 'today', label: '오늘 등록 키워드', value: '8', },
-]
+import type { AlertItem, DDayItem, DonutSlice, PipelineStage, ProjectItem, StatCardData } from '../types/types'
 
 export const pipelineStages: PipelineStage[] = [
   { id: 'plan', label: '발주계획', active: true },
@@ -15,8 +13,15 @@ export const pipelineStages: PipelineStage[] = [
   { id: 'result', label: '개찰공고', active: false },
 ]
 
+export const statCards: StatCardData[] = [
+  { id: 'interest', label: '관심 사업', value: 12, total: 20 },
+  { id: 'unread', label: '읽지 않은 알림', value: 12, total: 20 },
+  { id: 'deadline', label: '마감 임박', value: 3, total: 20},
+  { id: 'today', label: '오늘 등록 키워드', value: 8, total: 20},
+]
+
 export const recentAlerts: AlertItem[] = [
-  { id: '1', badge: '임찰공고', title: '"청년 고용 올케어 플랫폼 사업"이 입찰공고로 전환됨', timeAgo: '3분전', dday: 'D-7' },
+  { id: '1', badge: '입찰공고', title: '"청년 고용 올케어 플랫폼 사업"이 입찰공고로 전환됨', timeAgo: '3분전', dday: 'D-7' },
   { id: '2', badge: '사전규격', title: '"청년 고용 올케어 플랫폼 사업" 마감임박!', timeAgo: '30분전', dday: 'D-0' },
   { id: '3', badge: '발주계획', title: '"중장년내일센터 사업" 내용이 정정됨', timeAgo: '40분전', dday: 'D-7' },
   { id: '4', badge: '발주계획', title: '"중장년내일센터 사업"이 발주계획에 등록됨', timeAgo: '1시간전', dday: 'D-7' },

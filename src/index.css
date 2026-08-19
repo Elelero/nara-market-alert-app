@@ -6,3 +6,9 @@ body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
   background-color: #f4f6fa;
 }
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white p-5;
+  }
+}
