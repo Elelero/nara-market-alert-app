@@ -13,6 +13,7 @@ import {
 import logo from "@images/logo.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@components/common/Button";
 
 // 사이드바 메인 메뉴
 const mainMenu = [
@@ -97,7 +98,7 @@ const Sidebar = () => {
       <div className="flex items-center">
         <img src={logo} width={70} />
         <span className="text-lg">
-          <button onClick={() => navigate("/origin")}>클로드(원본)</button>
+          <Button variant="secondary" onClick={() => navigate("/origin")}>나라장터알리미</Button>
         </span>
       </div>
 
@@ -134,9 +135,7 @@ const Sidebar = () => {
               <br />
               알림 받아보세요
             </p>
-            <button className="w-full bg-blue-500 hover:bg-blue-700 transition-colors text-white text-xs font-semibold py-2 rounded-lg">
-              알림받기
-            </button>
+            <Button variant="primary">알림받기</Button>
           </div>
         </div>
       </div>

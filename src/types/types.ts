@@ -8,9 +8,10 @@ export interface PipelineStage {
   id: string
   label: string
   active?: boolean
+  value: number
 }
 
-export interface StatCardData {
+export interface StatCards {
   id: string
   label: string
   value: number

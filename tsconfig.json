@@ -19,7 +19,8 @@
     // 경로 별칭지정
     "types": ["node"],
     "paths": {
-      "@images/*": ["./src/assets/images/*"]
+      "@images/*": ["./src/assets/images/*"], // 이미지 경로
+      "@components/*": ["./src/components/*"], // 컴포넌트 경로
     }
 
   },

@@ -3,17 +3,17 @@
  * <cf. 수치(Number) 데이터는 제거할 예정>
  **********************************************/
 
-import type { AlertItem, DDayItem, DonutSlice, PipelineStage, ProjectItem, StatCardData } from '../types/types'
+import type { AlertItem, DDayItem, DonutSlice, PipelineStage, ProjectItem, StatCards } from '../types/types'
 
 export const pipelineStages: PipelineStage[] = [
-  { id: 'plan', label: '발주계획', active: true },
-  { id: 'preview', label: '사전규격', active: true },
-  { id: 'notice', label: '입찰공고', active: true },
-  { id: 'proposal', label: '제안/평가', active: false },
-  { id: 'result', label: '개찰공고', active: false },
+  { id: 'plan', label: '발주계획', active: true, value: 3 },
+  { id: 'preview', label: '사전규격', active: true, value: 10 },
+  { id: 'notice', label: '입찰공고', active: true, value: 5 },
+  { id: 'proposal', label: '제안/평가', active: false, value: 5 },
+  { id: 'result', label: '개찰공고', active: false, value: 3 },
 ]
 
-export const statCards: StatCardData[] = [
+export const statCards: StatCards[] = [
   { id: 'interest', label: '관심 사업', value: 12, total: 20 },
   { id: 'unread', label: '읽지 않은 알림', value: 12, total: 20 },
   { id: 'deadline', label: '마감 임박', value: 3, total: 20},
