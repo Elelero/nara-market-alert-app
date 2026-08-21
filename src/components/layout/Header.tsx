@@ -1,3 +1,4 @@
+import Input from "@components/common/Input";
 import { useState } from "react";
 
 // 헤더 Component
@@ -20,7 +21,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
                 {/* Search Input */}
                 <div>
-                    
+                    <Input />
                 </div>
 
             </div>
