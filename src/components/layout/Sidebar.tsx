@@ -11,14 +11,15 @@ import {
   Star,
 } from "lucide-react";
 import logo from "@images/logo.png";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "@components/common/Button";
 
 // 사이드바 메인 메뉴
+// !!! 중메뉴별로 path 지정 필요!!!
 const mainMenu = [
-  { label: "대시보드", icon: LayoutDashboard },
-  { label: "사업관리", icon: Briefcase },
+  { label: "대시보드", icon: LayoutDashboard, path: "/" },
+  { label: "사업관리", icon: Briefcase, path: "/bsns" },
   { label: "관심사업", icon: Star },
   { label: "알림센터", icon: Bell },
 ];
@@ -41,9 +42,9 @@ const quickMenu = [
 // 사이드바 타입 선언
 interface SidebarSectionProps {
   title?: string;
-  items: { label: string; icon: LucideIcon }[];
+  items: { label: string; icon: LucideIcon; path?: string }[];
   activeLabel?: string;
-  onSelect: (label: string) => void;
+  onSelect: (label: string, path?: string) => void;
 }
 
 // 사이드바 CSS 효과
@@ -63,13 +64,13 @@ const SidebarSection = ({
 
     {/* 메뉴 소제목 */}
     <ul className="space-y-1">
-      {items.map(({ label, icon: Icon }) => {
+      {items.map(({ label, icon: Icon, path }) => {
         const bActive = label === activeLabel;
 
         return (
           <li key={label}>
             <button
-              onClick={() => onSelect(label)}
+              onClick={() => onSelect(label, path)}
               className={`w-full flex item-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors
                 ${
                   bActive
@@ -89,8 +90,22 @@ const SidebarSection = ({
 
 // 사이드바 Component
 const Sidebar = () => {
-  const [activeLabel, setActiveLabel] = useState("대시보드");
+  const location = useLocation();
   const navigate = useNavigate();
+  const [activeLabel, setActiveLabel] = useState(
+    mainMenu.find((item) => item.path === location.pathname)?.label ?? "대시보드"
+  );
+
+  // 주소 직접 입력, 새로고침, 뒤/앞으로 가기 시 활성 메뉴를 현재 경로와 동기화
+  useEffect(() => {
+    const matched = mainMenu.find((item) => item.path === location.pathname);
+    if (matched) setActiveLabel(matched.label);
+  }, [location.pathname]);
+
+  const handleSelect = (label: string, path?: string) => {
+    setActiveLabel(label);
+    if (path) navigate(path);
+  };
 
   return (
     <aside className="w-48 shrink-0 h-screen flex flex-col border-b border-slate-200 bg-white">
@@ -109,21 +124,21 @@ const Sidebar = () => {
           <SidebarSection
             items={mainMenu}
             activeLabel={activeLabel}
-            onSelect={setActiveLabel}
+            onSelect={handleSelect}
           />
           <div className="mx-4 mt-6 border-t border-slate-700" />
           <SidebarSection
             title="MY 메뉴"
             items={myMenu}
             activeLabel={activeLabel}
-            onSelect={setActiveLabel}
+            onSelect={handleSelect}
           />
           <div className="mx-4 mt-6 border-t border-slate-700" />
           <SidebarSection
             title="QUICK 메뉴"
             items={quickMenu}
             activeLabel={activeLabel}
-            onSelect={setActiveLabel}
+            onSelect={handleSelect}
           />
         </div>
 
