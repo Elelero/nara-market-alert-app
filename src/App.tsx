@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import App_bak from "./bak/App_bak";
 import PageLayout from "./components/layout/PageLayout";
 import Home from "./pages/Home/Home";
+import SearchBsns from "./pages/Bsns/SearchBsns";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
       <Route element={<PageLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/bsns" element={<SearchBsns />} />
       </Route>
       <Route path="/origin" element={<App_bak />} />
     </Routes>
