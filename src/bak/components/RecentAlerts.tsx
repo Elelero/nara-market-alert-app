@@ -1,14 +1,14 @@
-import type { AlertItem, BadgeType } from '../types'
+import type { AlertItem, BadgeType } from '../../types/types'
 
 const badgeStyles: Record<BadgeType, string> = {
-  임찰공고: 'bg-blue-100 text-blue-600',
+  입찰공고: 'bg-blue-100 text-blue-600',
   사전규격: 'bg-cyan-100 text-cyan-600',
   발주계획: 'bg-slate-200 text-slate-600',
   개찰결과: 'bg-red-100 text-red-600',
 }
 
 const dotStyles: Record<BadgeType, string> = {
-  임찰공고: 'bg-blue-500',
+  입찰공고: 'bg-blue-500',
   사전규격: 'bg-cyan-500',
   발주계획: 'bg-slate-400',
   개찰결과: 'bg-red-500',

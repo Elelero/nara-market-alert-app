@@ -8,7 +8,7 @@ type StatCardProp = { cards: StatCards[] };
 
 const StatCardSection = ({ cards }: StatCardProp) => {
   return (
-    <div className="mt-4 grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-4 gap-4 h-5">
       {cards.map((card) => (
         <div key={card.id} className="card">
           <p className="mb-2 text-sm text-slate-500">{card.label}</p>
