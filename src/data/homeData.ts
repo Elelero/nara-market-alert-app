@@ -17,7 +17,7 @@ export const statCards: StatCards[] = [
   { id: 'interest', label: '관심 사업', value: 12, total: 20 },
   { id: 'unread', label: '읽지 않은 알림', value: 12, total: 20 },
   { id: 'deadline', label: '마감 임박', value: 3, total: 20},
-  { id: 'today', label: '오늘 등록 키워드', value: 8, total: 20},
+  { id: 'today', label: '등록 키워드', value: 8, total: 20},
 ]
 
 export const recentAlerts: AlertItem[] = [
