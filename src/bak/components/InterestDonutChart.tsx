@@ -1,5 +1,5 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
-import type { DonutSlice } from '../types'
+import type { DonutSlice } from '../../types/types'
 
 interface InterestDonutChartProps {
   data: DonutSlice[]

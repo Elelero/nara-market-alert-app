@@ -1,8 +1,9 @@
 /***********************************************************************
  * @description: 메인 홈페이지
  **********************************************************************/
-import { pipelineStages, statCards } from "../../data/homeData";
+import { donutSlices, pipelineStages, statCards } from "../../data/homeData";
 import BizListSection from "./BizListSection";
+import InterestDonutChart from "./InterestDonutChart";
 import PipelineFlowSection from "./PipelineFlowSection";
 import RecentAlertSection from "./RecentAlertSection";
 import StatCardSection from "./StatCardSection";
@@ -23,6 +24,9 @@ const Home = () => {
             <BizListSection title="HOT 관심 사업" />
             <BizListSection title="최근 조회 사업" />
           </div>
+
+          {/* [4행] 관심사업 현황 */}
+          <InterestDonutChart data={donutSlices} />
         </div>
 
         {/* [우측] 최근알림 */}
