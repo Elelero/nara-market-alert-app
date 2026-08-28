@@ -4,7 +4,7 @@
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: "primary" | "secondary" | "danger" | "light" | "dark";
+  variant?: "primary" | "secondary" | "danger" | "warning" | "light" | "dark";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
@@ -24,8 +24,9 @@ const Button = ({
   const variantStyle = {
     primary: "bg-blue-600 text-white hover:bg-blue-700",
     secondary: "bg-cyan-400 hover:bg-cyan-700",
-    danger: "bg-red-600 text-white hover:bg-red-700",
-    light: "bg-slate-100 hover:bg-slate-400",
+    danger: "bg-red-500 text-white hover:bg-red-700",
+    warning: "bg-yellow-400 text-black hover:bg-yellow-700",
+    light: "bg-slate-200 hover:bg-slate-400",
     dark: "bg-slate-600 text-white hover:bg-slate-700",
   };
 

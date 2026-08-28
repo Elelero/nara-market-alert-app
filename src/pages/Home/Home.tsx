@@ -26,7 +26,7 @@ const Home = () => {
         </div>
 
         {/* [우측] 최근알림 */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <RecentAlertSection />
         </div>
       </div>

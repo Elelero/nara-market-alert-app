@@ -54,7 +54,7 @@ const BizListSection = ({ title }: { title: string }) => {
             key={item.id}
             className="flex items-center justify-between gap-3"
           >
-            <div className="flex min-w-0 item-center gap-2">
+            <div className="flex min-w-0 items-center gap-2">
                 <span className="h-2 w-2 flex-shrink-0 rounded-full bg-slate-300" />
                 <span className="truncate text-sm text-slate-700">{item.title}</span>
             </div>
